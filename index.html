@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>晶帷牙醫診所 — SEO 健檢暨合作提案報告</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0B1D3A;--navy2:#132847;
+  --red:#D41B2C;--red2:#E8293A;
+  --blue:#2563EB;--teal:#0EA5E9;
+  --alert:#EF4444;--green:#10B981;--warn:#F59E0B;
+  --ink:#1E293B;--ink2:#475569;--ink3:#94A3B8;
+  --bg:#F0F4F8;--bg2:#E8EDF3;--card:#FFFFFF;--border:#E2E8F0;
+  --radius:10px;--shadow:0 2px 12px rgba(11,29,58,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+#nav{position:sticky;top:0;z-index:100;background:rgba(11,29,58,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:52px}
+.nav-brand{font-size:13px;font-weight:700;color:#fff;letter-spacing:.5px;white-space:nowrap;margin-right:auto;display:flex;align-items:center;gap:8px}
+.nav-links{display:flex;gap:0;list-style:none}
+.nav-links a{display:block;padding:0 13px;height:52px;line-height:52px;font-size:12px;font-weight:500;color:rgba(255,255,255,.55);transition:color .2s;white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-cta{margin-left:12px;background:#D41B2C;color:#fff!important;border-radius:6px;padding:0 14px!important;height:34px!important;line-height:34px!important;font-weight:600!important;font-size:12px!important;transition:background .2s;align-self:center;flex-shrink:0}
+.nav-cta:hover{background:#E8293A!important}
+@media(max-width:700px){.nav-links{display:none}}
+
+/* HERO */
+#hero{background:linear-gradient(145deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;padding:72px 24px 64px;position:relative;overflow:hidden}
+#hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 700px 400px at 65% 50%,rgba(212,27,44,.1),transparent);pointer-events:none}
+.hero-inner{max-width:1100px;margin:0 auto;position:relative}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:4px 14px;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:24px}
+.hero-eyebrow span{color:#D41B2C}
+.hero-title{font-size:clamp(24px,3.5vw,42px);font-weight:900;line-height:1.15;margin-bottom:16px;letter-spacing:-.3px}
+.hero-title em{font-style:normal;color:#D41B2C}
+.hero-sub{font-size:14px;color:rgba(255,255,255,.65);max-width:580px;line-height:1.7;margin-bottom:36px}
+.hero-kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:32px}
+@media(max-width:800px){.hero-kpis{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:480px){.hero-kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:16px 12px;text-align:center}
+.kpi-val{font-size:22px;font-weight:900;display:block;line-height:1;color:#fff}
+.kpi-lbl{font-size:10px;color:rgba(255,255,255,.45);display:block;margin-top:5px;line-height:1.3}
+.kpi-alert .kpi-val{color:#FF6B6B}
+.kpi-warn  .kpi-val{color:#FFC65C}
+.kpi-good  .kpi-val{color:#4ADE80}
+.kpi-main  .kpi-val{color:#D41B2C}
+
+/* SECTION */
+.section{padding:60px 24px}
+.section-alt{background:#fff}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-hd{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:28px;gap:16px}
+@media(max-width:600px){.section-hd{flex-direction:column;align-items:flex-start}}
+.ch-num{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D41B2C;margin-bottom:4px}
+.section-title{font-size:22px;font-weight:800;color:var(--navy);letter-spacing:-.3px}
+.section-src{font-size:11px;color:var(--ink3);text-align:right;line-height:1.5;flex-shrink:0}
+
+/* METRICS */
+.metric-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+@media(max-width:900px){.metric-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:480px){.metric-grid{grid-template-columns:repeat(2,1fr)}}
+.metric-c{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px 14px;text-align:center;box-shadow:var(--shadow)}
+.metric-c.alert{border-color:#FCA5A5;background:#FFF1F2}
+.metric-c.good {border-color:#86EFAC;background:#F0FDF4}
+.metric-c.warn {border-color:#FDE68A;background:#FFFBEB}
+.m-val{font-size:26px;font-weight:900;color:var(--navy);display:block;line-height:1}
+.m-lbl{font-size:11px;color:var(--ink2);display:block;margin-top:5px;line-height:1.3}
+
+/* CALLOUTS */
+.callout{border-radius:var(--radius);padding:14px 16px;font-size:13px;line-height:1.6;margin-bottom:16px;border:1px solid}
+.callout-red {background:#FFF1F2;border-color:#FCA5A5;border-left:4px solid var(--alert)}
+.callout-warn{background:#FFFBEB;border-color:#FDE68A;border-left:4px solid var(--warn)}
+.callout-blue{background:#EFF6FF;border-color:#BFDBFE;border-left:4px solid var(--blue)}
+.callout-green{background:#F0FDF4;border-color:#BBF7D0;border-left:4px solid var(--green)}
+.callout-gray{background:var(--bg);border-color:var(--border);font-size:11px;color:var(--ink2)}
+
+/* TABLES */
+.tbl-wrap{border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);margin-bottom:16px}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{background:var(--navy);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:11.5px;white-space:nowrap}
+td{padding:9px 14px;border-bottom:1px solid var(--bg2);vertical-align:middle;color:var(--ink)}
+tr:last-child td{border-bottom:none}
+tr:nth-child(even) td{background:var(--bg)}
+tr:hover td{background:#EEF3FA;transition:background .15s}
+.num{font-weight:700}
+.red{color:var(--alert);font-weight:700}
+.green{color:var(--green);font-weight:700}
+.warn{color:var(--warn);font-weight:700}
+.blue{color:var(--blue);font-weight:700}
+.gray{color:var(--ink3)}
+.sub{font-size:10.5px;color:var(--ink3);display:block;margin-top:1px}
+.b{border-radius:4px;padding:2px 8px;font-size:10.5px;font-weight:700;display:inline-block;border:1px solid;white-space:nowrap}
+.b-g{background:#DCFCE7;color:#16A34A;border-color:#86EFAC}
+.b-r{background:#FEE2E2;color:#DC2626;border-color:#FCA5A5}
+.b-w{background:#FEF3C7;color:#D97706;border-color:#FCD34D}
+.b-b{background:#DBEAFE;color:#1D4ED8;border-color:#93C5FD}
+.b-gray{background:#F1F5F9;color:#475569;border-color:#CBD5E1}
+
+/* CHART */
+.chart-container{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);margin-bottom:16px}
+
+/* OPPORTUNITY CARDS */
+.opp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:700px){.opp-grid{grid-template-columns:1fr}}
+.opp-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);border-left:4px solid}
+.opp-card.high  {border-left-color:var(--alert)}
+.opp-card.medium{border-left-color:var(--warn)}
+.opp-card.low   {border-left-color:var(--green)}
+.opp-kw{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.opp-vol{font-size:22px;font-weight:900;color:var(--navy);line-height:1}
+.opp-meta{font-size:11px;color:var(--ink2);margin-top:4px;line-height:1.5}
+.opp-status{font-size:11px;font-weight:700;margin-top:6px;display:block}
+
+/* PACKAGES */
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:700px){.pkg-grid{grid-template-columns:1fr}}
+.pkg-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);display:flex;flex-direction:column;position:relative}
+.pkg-card.rec{border-color:var(--blue)}
+.pkg-rec-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;font-size:10px;font-weight:700;padding:3px 14px;border-radius:10px;white-space:nowrap}
+.pkg-tag{display:inline-block;background:var(--bg2);color:var(--ink2);font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;margin-bottom:10px}
+.pkg-tag.rec{background:#DBEAFE;color:var(--blue)}
+.pkg-name{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:4px}
+.pkg-desc{font-size:12px;color:var(--ink3);margin-bottom:16px;line-height:1.5}
+.pkg-items{font-size:12px;color:var(--ink);line-height:2;flex:1}
+.pkg-item{display:flex;gap:7px;align-items:flex-start;line-height:1.6;margin-bottom:4px}
+.pkg-item::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px}
+.pkg-note{font-size:10.5px;color:var(--ink3);margin-top:2px;display:block;line-height:1.4}
+
+/* ROADMAP */
+.roadmap{display:flex;flex-direction:column;gap:10px}
+.rm-step{display:grid;grid-template-columns:80px 1fr;gap:0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.rm-phase{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px 8px;color:#fff;font-size:11px;font-weight:700;text-align:center;line-height:1.3}
+.rm-body{background:var(--card);border:1px solid var(--border);border-left:none;padding:14px 18px}
+.rm-body h4{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:3px}
+.rm-body p{font-size:11.5px;color:var(--ink2);line-height:1.6}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* FOOTER */
+#footer{background:linear-gradient(135deg,#0d0206 0%,var(--navy) 100%);color:rgba(255,255,255,.6);text-align:center;padding:40px 24px;font-size:12px}
+#footer strong{color:#fff}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <a href="https://www.pufe.com.tw/index.html" target="_blank" style="display:inline-block;background:#fff;border-radius:5px;padding:3px 8px;line-height:0;margin-right:6px;flex-shrink:0" title="普飛國際行銷有限公司">
+        <img src="data:image/png;base64,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p06drrv++j59+qxbt+7UU06586c/7dy5s3UuSil1EJCIoEYjsXj8zjvvnDhxYps2bb53/XVWbQ03bD5hBathNm7tcM7573//+/nz50spGxoa7r777nBfaGrTaGtWjdLGGH6Ic3L69On19fVPP/00AJSNHAkANHbBfqOd/fTuu+++O3/B5s2bqfYmk8mQnnv++ef36NEDADjj4eGJEJoyf+aZZy5dujQej6fT6UceeWTLli3l5eUfffRRLBb729/+1qVLl159epN2GG7r4Pt+zbq15Nru1KnTxIkT4/H4ooULX3rppUGDBl188cUdSjrW1tYexffID/bgkOgxxghHptPpXr16xeNxGyrO1tAqJaVsU1i4Zs0akul0Tmgcn+0Beeedd86aNeuMgQObm5urq6vpbhOJRBAErpSawaeffppIJDKpNGH3pptuOu2004qK21r/oi1YOsGV0Db2Eg6fnX/++QsWLEDEFStWLF++fPDgwbbROaX9W7bMhciqU9TjT3AA+Osbb3zxxRc6CDp26lQ2ciS9TmttI4+ky7uuW15evnXrVupOzqUgjSfbUJ9ADxhuTA2h/gVDhgz505/+RIU6v/zlL3/+858POvPMHXV1b7/99rRp06SUY8eOvXzsFTZMRM/rOM7kyZOXLVv2fvl7N954YzyRCHx/xowZe/bsKS8vZ4wNHz588uTJdlLmYYGllIrFYlRRTaAhJd1xnHvuuad///5hT4oNgmEuAEp4otpoKtin78pv1QoAHn30UUPzfIQID+1GwR966CGLbNq1WCz22BOPFxYWWjv6QN+yExgrDIc5rbbbt2/fyy+/nI7RCy+80NDQQJtK1Zsi1Ezcz2QgNweFikOamppmz55NLolLL70UINulnaa+5CqVhXV43nbbbcTqR40a9cgjj/Tp0+eAs55qUIHZbi2+7wM7YKsmkskxY8ZQ6/b169f/4he/WLxoUXG7dhUVFcQw4vG44MKyWzJESCCeeeaZd/zkx60KCgDgpWnT9u7dG4/HHce57rrrtNae4wYZnyEc9l84zk3FpZap2zNz2PAz43z69OkvvfzytGnTqN281vrFl1567rnnJk+Zoo0GBhs3b7Kdkglw9LzZST65cRg24plKpXbu3Gkb49j3nnir0Jrf1qDljH/70m998N77X3zxRe+evZQfyHyZ7fdiDM+ph1pr1/OI/VqROnXq1Pr6euq6ftGoUdSqlKYnHBCguVUQQnTq1Onxxx/v0rWr0ZqmfHPORa51OzAW6KwXnmB9kB+BiyvGjv3www83bNgghNiyZctTTz319NNPG2NIAnbp0gVyPdmUUkJKnrOYrGSsqKiYP3++DgLN+XXXXRePx9u3b3/55ZcfRZRwznfs2EHsDRG/853vZJmT4MYY21y0xXQ7YwwY5EJQ8w9qxpw1IYUwWgt5kLVRWlrat2/fbMRMaYaoAInVxVwPAGbMmGE1kKxD+3ATyE5YENoer5kzZ86YMYMxJjArJVWu6jccRlTGCCfb0cAR0vd9RwgDIIQItCJGTVOyjI3JA95///39+vULD5e3Xz1l0mRSOQ3g+nW1zc3NkvM2RUXFxcVpP+PFYw1792/YsMFxHM/zunTpwkTO62ZQaz1+/Php06Zt2rSJbEzLzxzHef6FF+ghSe2lPqUkR+gGdu3ade+99zbXNzDGevfufd/EicTJqUv7UczCNWvW3HfffSR3pr/ySm6lD5/AST8vXrz43fkLLNoqKyupQVKvPn2Il5d07nTDDTdMmTKlpqo60HrCP10zZsyY7GGmVAt7RwhozD/90z+R9jb5gSm9e/cOR69PsLshHHqzhgxjjCbU++TqzfkjyI+VjfZoah6alVkmFw8mmYgsq9Bk4ZKLAVsfrLXPCWefVnxGJcXcoOM4ZEHs2LFj165d2dkyStFUc5+x1atXZ9W73LSSmTNn/uLhh1+bMWPu3LmNjY2EYynlTbfcnN2JXKSW21A354DQ1ND4qyd+2VjfwAE04rirr6LGuCyLrSMXfJLPU4hs9/YccOGQ+Y/hRa6rq6upqQkfLZJ0lZWVB5J8DArGadIdo95dmIMIYi48n+0jQD0bZCgRw3o9js+Q2KP5scIVakVFRQMGDFBKSS6slWF7JJsjD/2x/Z8gN1iL3NmkpyMilyIej4dd4SRMSWfPy8traGhwHEcI7vs+l9KuPn04DQhmIc2M9C1iGPTilePHf/Ob33zuueeklMhg7Nix1GG2RQ4TDSAGgPr9+x977LENGzbAcRmiTDDKupF1NtZOoQvXcexUKcg1mPB9/9VXX501axY1abKNfWwvGjIVW+Xl0QUnl+e9RW7G8OHDKZxusxsPNHMP5VkfdtlUEEjKtNGanMvZQ0aoNQfyk+gH68FzHOfOO+8kYw0D9cf//u8tW7Z4njdkyJBLL72UPFgb169/afp0ROzQocMNN9xAe1NRUUFKRjqdJjPixRdfXLJkSceOHe+fNDEvL69FMWdY+di8cdPUqVNJvH61tqVfIZN43Lhx464Ya+vfrxo/ntjwiy+/THDHXI+WIAgSiURzOk2Hh/RLMq0ymQznnPoMJJNJajhz0gEr3OyQuJfrZl3ny5Yt27p1q92VcKzqsAC1+bjWNkHE4uLiYcOGGWOo2XDYMg87SwcOHJj1BXBBk0KDIDjzzDO7desmHEk3SYPgEolEab9+ilyFnM2ePTuTyWzatAmN+eUvf7lq1SohxNatWxcvXnzppZeGfdDh2cnV1dWPPvqoDhSxumQymfoHNzCm73399df37NpdV1d33333MRuWFgIYe+jBB6lS/pZbbiErO5PJtG3btn379rbXDa2Yk2NvrusuX748nhuXd3IBK5zfd9DrnL/11lufffaZHehozY2jZ0nYa8hV06dPn/OHDxecAwv1TAv5qcPJM9lRNjt2kDZWVFREXjEbY7EhHepJXFJSQqOa6ClKSkpWrVrFGBs2bNgll1wSzmVo4YwuLS297LLLXn31Vc/zbr755oULF9asXn0cOFZ1dXV1ZRUifv7559TSiBzLaMz69euDIKiqqrrlllus7lhWVjZu3DhgLCw3yLAgDnfNhAlwSM3BSQSsFjKOWnHSLhKqSMUBAOCHF4V2vpmdy1hfX08GWlgg2iBSdlbWwV9KV+7atYu4pgEMN7Q50GEMjQABAHl5eVbtmDRp0rBhw77//e/7vv/tyy7LDgzPdZyipwhPshw3blz//v2VUv379V+0aNFxULAQsXfv3qurqo0x69evp7EUuSZQPJ1Oa61pGF14OkEoNRyzaaqIpKIbGnsR8pucXNkNlnOE0zzodimUNm7cuCuuuCI7fe8IwAITMs4RKyoqHn/8cRoKmrUoHWlTdKxsCnukSCLX1NTQ9zqeS/Ecq5AR4wm0CgfySktLqU3jpk2bKioqHMfp2rVrXl5e2QUjD7TBDfnMEICG3gBAnz59qMXyER/q62ZaPXr0IOd4bW3t+cOH0/Amzvnq6mq6z9atW9t8axp9aJOV6ZCQiLS5tY7j6CAI1yOdjGkz4aQDNMZWiVgz6mh+nTC7Zsx1XYpXUJqmdBzbWf9Q74Z9HQA+/PBDrbXruu07dKDYTjhSTgMdwgegU6dOa9asQcR0Oh2LxYwxmzdvfuaZZ/77+eemTJnSuXPncFyFws92kLhtZ30cnNTEcVu3bk1LvXXrVjTGPt369evJfd+2bVtK7CGOXllZWV1dHU7upcUhQZlNg+P8OAy8/OpBaAj1urTuEBJD5eXlFRUVtARHMj9UbpIxcT5KJyJxRs7o7ASRQxw8kKtZMEqn0+nFixfTfpcNHwEGOTAbz6cjS7zNum369ev39ttv0+cMGzZs+bJl9NV5iWTnTp2N0nZCSRZMxjDOWEjCWr8ahlYge8bgoLSFcDiVcw4mew59pbJ+Mv4lrK9r165023v27MlVByFjLN3c3KZNm3379g0cODCcfSk5Z7kiFMwNLKZvpyAEPdFh6wqPT1mY/ApKgZ2XvH379l27dh3dJreZZZYZQIuWnrlE5DDXOSBIteZCzJkzp6mpibj90KFDLYO0eeuUeRxONhpy9tkFBQWUqtuqVatn//SnJe+99/bbb3MpJ02c2L179z6lfc866yzrTbWh9HBCNslKP5fZjAw4oT0n3w+DqkPCJjR+7EhtP+0pHTx4cFNTEyJyii4bo7UeO3782PHjP1yypEV85rIxY8aPH8+tuMhZRVlvDuKECRNEqO4oLHOOD7bkV+Dd1GVVKVVUVNSxY8cW9ZZH8lzQ8Wpubt60aVOYBVqT0Mm1YbWgkVIyITZu2PC3v/2NVufCCy9s1aoV1WKQPkGcn94ezkwEgJEjR77++uuc89mzZ5eUlIwoKzt32LAZr7766quvrlu3LpVJDxkyJAwOcXBnb6tBH+jkm/VxA1Uu2OAm4c9ikTIEXSkdx9FKCUcepZmsVfjuuusuUhsoHybueWnff3POnDfffHP37t2nnHLKE088kc3soIe1TJSYNGP0ilU8wgAK1wLBcak3/CocS0rZ3NzsOM4FF1xARi8g4pH8o8DCxnBVVRWlqNtS3RbJ9VYhJa083ZyaOnUqlTcVFBRcfvnl1H5ThLRAW1F9kD0LeOVV499///3PP//cdd2nn366urr6yiuvrK6uptKPU089NTszPAhstU+4tPqApGMsm98RLsVm8O6777Zt27Zfv37WnqU/7d271/M81DqTyVCaPB6ZY9mUB8zxm6rKylgslvH9WCz2wgsvkGmyf//+eW+/5asAc0afNaiRAeOMglGEqsaGBiEE5vqlt0hXOcEhnSOyn1x6pxBiz549lZWVkJsxeSSrMCwHt2zZQq3PbVNyO884nFZAjoB169Y9/uhjqVSKtu2aa64pbtcO2EGzWOiNYRlqvbWIeNfdP508cVJDQ4OUcsGCBeXl5fYbu3XrRt9CGq5NGAwX8hNvDnK+CbQ8THJEfO+99z755BMpZefOnbt27dquXTsCwXuLy9PptOS8oKDgS9dTCFFXV7dt27YNtesrKyspYkgMklxxjuMUFBSMGFk2bNgwyvk5yB2T6364cuXK7du39+jRo7i4eNasWeQJo/l+YVficWtjdMzA4kJQCpvW+p133lm4cCGEqrUOq0O0qEwMRw/tYx/qxCcopFIpWv1hw4aVlZVRjkDYpUl8wgbFWgzZbt++/b/ff98Dk6dQT2zf90lRO/XUU0tLSy1ftMzGFvrRVxCntAYBDeFxHAdy2VeOkICwbcvWjes3ZAOggILxWCzmp9Nnn322CgIuxVF6XyPivn37HnnkEcE4Wbu2/szzvDPOOGPUqFG9+vTOjhcIJUJCds5Pttv++vXrZ82aRTdMx4x8jYWFheGEmeNWGP1VdCyblWDr6MkMPsraWTULEZPJZFNTE20zcT44WK5ZFN522239+pa+8MILw4YNu+HGfw6fOcqgQgCbrhkuXrXcXkrZtWvXRx9/7De//o9169aJXBv3MWPGeJ5HXx3W1u27rG2vlPI8jzbsQGzAGMb50KFDtdZr1qzJZDI0EUkIYdBwzpRSZ5xxxoQJE6TjaKOPvpl9+vQ5/fTTKz+roIDMGWec0atXrzPPPLNr165cCG102GqmkxAEAXDG8KBaaqvqWX9vWVlZYWFhiySo46NjHXt/LIQlH3xQV1dn47hZx88RPscc7G2yVnHHTiXnnHNO2FS0vK2FYd/c1JRIJoEdSCDO3QgAwN7de95++20hRJuiwpEjRx4xlw2Bhhxt3LjxkksuaVtcDOyAs+BITUcWL168d9fuTBBcdPGo1q1bQ84LEO4zhMZs27Zt3759a9eupXrJU09pPWDAgMLCQmAs8H3Hc/HL2qpv2LDh44+WDRw4sHfv3mGnoE3pptyH2tradHNKCNGmTZui4ra2nkIIUV1ZtXz58traWpIGBQUFg04/vezCC8N5YC2s15MMWBFF9PeoTNESRBQBK6IIWBFFwIoooghYEUXAiigCVkQRRcCKKAJWRBGwIoooAlZEEbAiioAVUUQRsCKKgBVRBKyIIoqAFVEErIgiYEUUUQSsiCJgRRQBK6KIImBFFAEroghYEUUUASuiCFgRRcCKKKKvTP8XlHHEYL1Z2sYAAAAASUVORK5CYII=" alt="Perfect 普飛行銷" style="height:30px;width:auto;vertical-align:middle">
+      </a>
+      <span>晶帷牙醫診所 — SEO 健檢報告</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#metrics">核心指標</a></li>
+      <li><a href="#trend">流量趨勢</a></li>
+      <li><a href="#keywords">關鍵字</a></li>
+      <li><a href="#opportunity">機會分析</a></li>
+      <li><a href="#backlinks">外鏈</a></li>
+      <li><a href="#proposal">合作方案</a></li>
+      <li><a href="#proposal" class="nav-cta">立即洽詢</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow"><span>◆</span> AHREFS DATA REPORT · 2026-06-13</div>
+    <h1 class="hero-title">
+      品牌已建立，<br>
+      但每月有數百位新患者<br>
+      在搜尋服務時<em>找不到晶帷</em>
+    </h1>
+    <p class="hero-sub">晶帷牙醫診所從零出發，一年內建立穩定的品牌搜尋流量。然而 Ahrefs 數據顯示：96% 的流量來自已知品牌詞搜尋，「台中植牙」「台中兒童牙醫」等服務型關鍵字完全未排名——這些才是新患者找診所的路徑。本報告數據全部來自 Ahrefs API 直接查詢，提案由普飛行銷公司製作。</p>
+    <div class="hero-kpis">
+      <div class="kpi-card kpi-good"><span class="kpi-val" data-count="653">0</span><span class="kpi-lbl">月自然流量</span></div>
+      <div class="kpi-card kpi-alert"><span class="kpi-val" data-count="11">0</span><span class="kpi-lbl">自然關鍵字（極少）</span></div>
+      <div class="kpi-card kpi-warn"><span class="kpi-val">96%</span><span class="kpi-lbl">品牌詞流量佔比</span></div>
+      <div class="kpi-card kpi-alert"><span class="kpi-val">0</span><span class="kpi-lbl">服務型關鍵字排名</span></div>
+      <div class="kpi-card"><span class="kpi-val" data-count="189">0</span><span class="kpi-lbl">引用網域</span></div>
+    </div>
+    <div style="margin-top:20px;display:inline-flex;align-items:center;gap:10px;background:rgba(212,27,44,.2);border:1px solid rgba(212,27,44,.4);border-radius:6px;padding:6px 14px">
+      <span style="font-size:11px;color:rgba(255,255,255,.6)">提案單位</span>
+      <span style="font-size:11px;font-weight:700;color:#fff">普飛行銷公司 Perfect International</span>
+      <span style="font-size:10px;color:rgba(255,255,255,.4)">pufe.com.tw</span>
+    </div>
+  </div>
+</section>
+
+<!-- CH1 -->
+<section id="metrics" class="section section-alt">
+  <div class="section-inner">
+    <div class="section-hd reveal">
+      <div><div class="ch-num">Chapter 01</div><div class="section-title">SEO 核心指標</div></div>
+      <div class="section-src">Ahrefs</div>
+    </div>
+    <div class="metric-grid reveal">
+      <div class="metric-c warn"><span class="m-val" style="color:var(--warn)">653</span><span class="m-lbl">月自然流量<br><span style="font-size:10px;color:var(--green)">↑ 穩定成長趨勢</span></span></div>
+      <div class="metric-c alert"><span class="m-val" style="color:var(--alert)">11</span><span class="m-lbl">自然關鍵字總數</span></div>
+      <div class="metric-c good"><span class="m-val" style="color:var(--green)">7</span><span class="m-lbl">Top 1–3 排名詞</span></div>
+      <div class="metric-c"><span class="m-val">210</span><span class="m-lbl">活躍外部連結</span></div>
+      <div class="metric-c alert"><span class="m-val" style="color:var(--alert)">189</span><span class="m-lbl">引用網域<br><span style="font-size:10px;color:var(--alert)">⚠ 品質需確認</span></span></div>
+    </div>
+    <div class="callout callout-blue reveal" style="margin-top:12px">
+      <strong>關鍵解讀：</strong>653 次月流量對於一個 2025 年初建立的新診所是合理的起點。但自然關鍵字只有 11 個，且幾乎全是品牌詞——代表晶帷目前的 SEO 只服務「已知道診所名稱的人」，尚未建立吸引陌生新患者的能力。
+    </div>
+  </div>
+</section>
+
+<!-- CH2 -->
+<section id="trend" class="section">
+  <div class="section-inner">
+    <div class="section-hd reveal">
+      <div><div class="ch-num">Chapter 02</div><div class="section-title">流量歷史趨勢 <span style="font-size:14px;font-weight:500;color:var(--green)">✓ 正向成長</span></div></div>
+      <div class="section-src">Ahrefs</div>
+    </div>
+    <div class="callout callout-green reveal"><strong>正向訊號：</strong>晶帷於 2025 年初建站，從 0 開始在不到一年內建立穩定的月流量（590–653 次），成長趨勢健康，品牌搜尋已有初步紮根。</div>
+    <div class="chart-container reveal"><canvas id="trafficChart" style="width:100%;height:200px"></canvas></div>
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead><tr><th>時間點</th><th>月均流量</th><th>里程碑</th></tr></thead>
+        <tbody>
+          <tr><td>2025 年 1–3 月</td><td class="gray">0</td><td>網站剛建立，尚未被 Google 索引</td></tr>
+          <tr><td>2025 年 5 月</td><td class="warn">52</td><td>初步收錄，品牌詞開始出現排名</td></tr>
+          <tr><td>2025 年 6 月</td><td class="warn">344</td><td>快速成長期，品牌認知建立</td></tr>
+          <tr><td>2025 年 8 月</td><td class="green">617</td><td>達到近期高點</td></tr>
+          <tr><td>2026 年 3 月</td><td class="green">648</td><td>歷史最高點（Ahrefs 記錄）</td></tr>
+          <tr><td>2026 年 6 月（最新）</td><td class="green">594</td><td>健檢基準月，穩定維持</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout callout-gray reveal">數據來源：Ahrefs site-explorer-metrics-history，target=shiningway-teeth.com，2025-01 至 2026-06，monthly。</div>
+  </div>
+</section>
+
+<!-- CH3 -->
+<section id="keywords" class="section section-alt">
+  <div class="section-inner">
+    <div class="section-hd reveal">
+      <div><div class="ch-num">Chapter 03</div><div class="section-title">關鍵字排名分析</div></div>
+      <div class="section-src">Ahrefs</div>
+    </div>
+    <div class="callout callout-warn reveal"><strong>核心問題：</strong>11 個排名關鍵字全數為品牌詞或地點附近詞，沒有任何診療服務型關鍵字（植牙、矯正、兒童牙醫等）出現在搜尋結果中。新患者搜尋服務時，完全找不到晶帷。</div>
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead><tr><th>關鍵字</th><th>類型</th><th>排名</th><th>月搜尋量</th><th>流量貢獻</th></tr></thead>
+        <tbody>
+          <tr><td><strong>晶帷牙醫診所</strong></td><td><span class="b b-gray">品牌詞</span></td><td class="green">#1</td><td>350</td><td class="num">348</td></tr>
+          <tr><td>晶惟</td><td><span class="b b-gray">品牌詞</span></td><td class="green">#1</td><td>90</td><td class="num">93</td></tr>
+          <tr><td>晶帷牙醫</td><td><span class="b b-gray">品牌詞</span></td><td class="green">#1</td><td>80</td><td class="num">80</td></tr>
+          <tr><td>美村路牙醫診所</td><td><span class="b b-b">地理詞</span></td><td>#2</td><td>50</td><td class="num">55</td></tr>
+          <tr><td>美村路牙醫</td><td><span class="b b-b">地理詞</span></td><td class="green">#1</td><td>90</td><td class="num">41</td></tr>
+          <tr><td>蔡宜珊醫師</td><td><span class="b b-gray">品牌詞</span></td><td class="green">#1</td><td>30</td><td class="num">13</td></tr>
+          <tr><td>西區牙醫</td><td><span class="b b-b">地理詞</span></td><td class="warn">#4</td><td>80</td><td class="num">9</td></tr>
+          <tr><td>台中西區牙醫推薦</td><td><span class="b b-b">地理詞</span></td><td>#3</td><td>40</td><td class="num">6</td></tr>
+          <tr><td>西區牙醫診所</td><td><span class="b b-b">地理詞</span></td><td>#5</td><td>50</td><td class="num">5</td></tr>
+          <tr><td>台中西區牙醫</td><td><span class="b b-b">地理詞</span></td><td>#9</td><td>70</td><td class="num">2</td></tr>
+          <tr><td>美村牙醫</td><td><span class="b b-b">地理詞</span></td><td>#10</td><td>90</td><td class="num">0</td></tr>
+          <tr style="background:#FFF1F2"><td colspan="5" style="padding:8px 14px;font-size:11px;color:var(--alert)"><strong>⚠ 服務型關鍵字（台中植牙、牙齒矯正、兒童牙醫等）：全數未排名</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Top Pages -->
+    <div class="section-hd reveal" style="margin-top:40px">
+      <div><div class="ch-num">Chapter 04</div><div class="section-title">Top Pages 流量結構</div></div>
+      <div class="section-src">Ahrefs</div>
+    </div>
+    <div class="callout callout-warn reveal"><strong>首頁過度集中：</strong>653 次月流量中，558 次（85.5%）集中在首頁。服務頁（植牙、矯正、兒童牙醫）各自只有個位數的流量，等同無搜尋能見度。</div>
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead><tr><th>頁面路徑</th><th>月流量</th><th>最佳關鍵字</th><th>排名</th><th>關鍵字搜尋量</th></tr></thead>
+        <tbody>
+          <tr><td>/ <span class="sub">首頁</span></td><td class="num" style="color:var(--alert)">558</td><td>晶帷牙醫診所</td><td class="green">#1</td><td>350</td></tr>
+          <tr><td>/paper/services_index.php <span class="sub">醫師介紹</span></td><td class="num">30</td><td>蔡宜珊醫師</td><td>#2</td><td>30</td></tr>
+          <tr><td>/news/details.php?id=59739 <span class="sub">西區牙醫文章</span></td><td class="num">22</td><td>西區牙醫</td><td class="warn">#4</td><td>80</td></tr>
+          <tr><td>/paper/promotions_index.php <span class="sub">門診時間</span></td><td class="num">9</td><td>晶帷牙醫診所</td><td class="green">#1</td><td>350</td></tr>
+          <tr><td>/paper/other_select_index.php?id=5654 <span class="sub">人工植牙頁</span></td><td class="num warn">9</td><td>晶帷牙醫診所</td><td class="green">#1</td><td>350</td></tr>
+          <tr><td>/news/details.php?id=50338 <span class="sub">美村路文章</span></td><td class="num">8</td><td>美村路牙醫</td><td class="warn">#4</td><td>90</td></tr>
+          <tr style="background:#F0FDF4"><td colspan="5" style="padding:8px 14px;font-size:11px;color:#16A34A"><strong>85.5% 流量集中首頁</strong>　｜　人工植牙服務頁每月僅 9 次流量　｜　其他服務頁無有效搜尋流量</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CH5 OPPORTUNITY -->
+<section id="opportunity" class="section">
+  <div class="section-inner">
+    <div class="section-hd reveal">
+      <div><div class="ch-num">Chapter 05</div><div class="section-title">服務型關鍵字機會分析</div></div>
+      <div class="section-src">Ahrefs</div>
+    </div>
+    <div class="callout callout-blue reveal">以下為 Ahrefs Keywords Explorer（台灣市場）確認有搜尋量的服務型關鍵字，晶帷目前對這些詞<strong>全數無排名</strong>。這代表每個月有這些數量的潛在新患者正在搜尋，但搜尋結果裡沒有晶帷。</div>
+    <div class="opp-grid reveal">
+      <div class="opp-card high">
+        <div class="opp-kw">台中植牙</div>
+        <div class="opp-vol">400</div>
+        <div class="opp-meta">月搜尋量（台灣市場）<br>搜尋難度 KD 37（有競爭，需長期布局）</div>
+        <span class="opp-status" style="color:var(--alert)">❌ 晶帷目前無排名</span>
+      </div>
+      <div class="opp-card high">
+        <div class="opp-kw">台中植牙推薦</div>
+        <div class="opp-vol">400</div>
+        <div class="opp-meta">月搜尋量（台灣市場）<br>搜尋難度 KD 33（有競爭，長期價值高）</div>
+        <span class="opp-status" style="color:var(--alert)">❌ 晶帷目前無排名</span>
+      </div>
+      <div class="opp-card medium">
+        <div class="opp-kw">台中兒童牙醫</div>
+        <div class="opp-vol">200</div>
+        <div class="opp-meta">月搜尋量（台灣市場）<br>搜尋難度 KD 0（低難度，<strong>最快見效</strong>）</div>
+        <span class="opp-status" style="color:var(--green)">⭐ 優先切入機會</span>
+      </div>
+      <div class="opp-card medium">
+        <div class="opp-kw">台中洗牙</div>
+        <div class="opp-vol">100</div>
+        <div class="opp-meta">月搜尋量（台灣市場）<br>搜尋難度 KD 0（低難度，入門服務詞）</div>
+        <span class="opp-status" style="color:var(--green)">⭐ 優先切入機會</span>
+      </div>
+      <div class="opp-card medium">
+        <div class="opp-kw">台中牙齒矯正</div>
+        <div class="opp-vol">100</div>
+        <div class="opp-meta">月搜尋量（台灣市場）<br>難度未收錄（搜尋量仍具價值）</div>
+        <span class="opp-status" style="color:var(--alert)">❌ 晶帷目前無排名</span>
+      </div>
+      <div class="opp-card low">
+        <div class="opp-kw">美村路牙醫</div>
+        <div class="opp-vol">90</div>
+        <div class="opp-meta">月搜尋量（台灣市場）<br>搜尋難度 KD 0，晶帷已有相關文章排名 #4</div>
+        <span class="opp-status" style="color:var(--warn)">⚠ 有基礎，需提升至 #1–2</span>
+      </div>
+    </div>
+    <div class="callout callout-warn reveal" style="margin-top:16px">
+      <strong>合計機會：</strong>以上六個關鍵字月搜尋量合計 <strong>1,290 次/月</strong>（台灣市場 Ahrefs 確認）。其中「台中兒童牙醫」與「台中洗牙」難度最低（KD 0），是最快可建立排名的切入點。
+    </div>
+  </div>
+</section>
+
+<!-- CH6 BACKLINKS -->
+<section id="backlinks" class="section section-alt">
+  <div class="section-inner">
+    <div class="section-hd reveal">
+      <div><div class="ch-num">Chapter 06</div><div class="section-title">外鏈品質分析</div></div>
+      <div class="section-src">Ahrefs</div>
+    </div>
+    <div class="callout callout-gray reveal">活躍外部連結 210 條 · 引用網域 189 個 · 全時間外部連結 373 條 · 全時間引用網域 263 個（Ahrefs site-explorer-backlinks-stats 確認）</div>
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead><tr><th>引用網域</th><th>DR</th><th>Dofollow</th><th>總連結</th><th>性質評估</th></tr></thead>
+        <tbody>
+          <tr><td><strong>ykqk.com.tw</strong><span class="sub">揚京快客</span></td><td>88</td><td class="green">11</td><td>11</td><td class="green">網站建設公司（正常）</td></tr>
+          <tr><td><strong>mit-machining.com</strong><span class="sub">CMS 平台</span></td><td>80</td><td class="green">19</td><td>19</td><td class="green">網站 CMS 平台（正常）</td></tr>
+          <tr><td>itxoft.com</td><td>83</td><td class="gray">0</td><td>2</td><td class="gray">技術目錄（nofollow）</td></tr>
+          <tr style="background:#FFF1F2"><td>rank-your.website<br>rankyour.website</td><td>75 / 74</td><td class="gray">0</td><td>2</td><td class="red">⚠ SEO 工具類網站</td></tr>
+          <tr style="background:#FFF1F2"><td>seoexpress.org<br>rankva.com</td><td>73 / 72</td><td class="gray">0</td><td>3</td><td class="red">⚠ 疑似 SEO 服務/工具類</td></tr>
+          <tr style="background:#FFF1F2"><td><strong>buybacklinks.agency</strong><span class="sub">名稱明確指向付費外鏈</span></td><td>72</td><td class="gray">0</td><td>1</td><td class="red">⚠ 高風險（付費外鏈服務）</td></tr>
+          <tr style="background:#FFF1F2"><td>rank-top.click</td><td>63</td><td class="gray">0</td><td>1</td><td class="red">⚠ 疑似 SEO spam</td></tr>
+          <tr style="background:#FFFBEB"><td colspan="5" style="font-size:11px;color:#D97706;padding:8px 14px">
+            <strong>外鏈品質警示：</strong>189 個引用網域中，DR 60+ 且 dofollow 的有效連結僅來自 ykqk（11條）與 mit-machining（19條），合計 30 條（均為建站/CMS 平台連結）。其餘多為 SEO 工具類或疑似 spam 網站，均為 nofollow，無 PageRank 效益，但需注意潛在的 Google Spam Policy 風險。
+          </td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CH7 PROPOSAL -->
+<section id="proposal" class="section" style="background:#1a1a2e">
+  <div class="section-inner">
+    <div class="section-hd reveal" style="border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:24px;margin-bottom:32px">
+      <div><div class="ch-num" style="color:#D41B2C">Chapter 07</div><div class="section-title" style="color:#fff">12 個月合作方案</div></div>
+      <div class="section-src" style="color:rgba(255,255,255,.4)">定價另行洽詢<br>數據驗收以 Ahrefs 指標為基準</div>
+    </div>
+    <div class="pkg-grid reveal">
+      <!-- A -->
+      <div class="pkg-card">
+        <div class="pkg-tag">方案 A</div>
+        <div class="pkg-name">在地 SEO 基礎建置</div>
+        <div class="pkg-desc">品牌搜尋鞏固 · 低難度服務詞切入</div>
+        <div class="pkg-items">
+          <div class="pkg-item"><span>地理型關鍵字排名優化<span class="pkg-note">美村路牙醫（KD 0）提升至 #1；西區牙醫（KD 11）提升至 #2–3</span></span></div>
+          <div class="pkg-item"><span>低難度服務詞起步<span class="pkg-note">台中兒童牙醫（KD 0, 200/月）、台中洗牙（KD 0, 100/月）</span></span></div>
+          <div class="pkg-item"><span>外鏈品質健檢（疑似 spam 外鏈評估）</span></div>
+          <div class="pkg-item"><span>Google 商家檔案優化（在地 SEO 基礎）</span></div>
+          <div class="pkg-item"><span>月度 Ahrefs 成效報告</span></div>
+        </div>
+      </div>
+      <!-- B -->
+      <div class="pkg-card">
+        <div class="pkg-tag">方案 B</div>
+        <div class="pkg-name">服務頁面建立</div>
+        <div class="pkg-desc">診療項目頁 SEO · 內容行銷</div>
+        <div class="pkg-items">
+          <div class="pkg-item"><span>方案 A 全部服務</span></div>
+          <div class="pkg-item"><span>診療項目 SEO 落地頁優化<span class="pkg-note">植牙、矯正、兒童牙醫各自建立可被 Google 索引的服務頁</span></span></div>
+          <div class="pkg-item"><span>每月 2 篇 SEO 文章<span class="pkg-note">目標關鍵字：台中植牙推薦、美村路牙醫、台中隱適美等</span></span></div>
+          <div class="pkg-item"><span>患者 FAQ 內容建立（提升 AI 引用率）</span></div>
+          <div class="pkg-item"><span>季度 Ahrefs 複檢</span></div>
+        </div>
+      </div>
+      <!-- C -->
+      <div class="pkg-card rec">
+        <div class="pkg-rec-badge">推薦方案</div>
+        <div class="pkg-tag rec">方案 C</div>
+        <div class="pkg-name">完整 SEO × 內容行銷</div>
+        <div class="pkg-desc">品牌聲量 · 高競爭植牙詞佈局</div>
+        <div class="pkg-items">
+          <div class="pkg-item"><span>方案 B 全部服務</span></div>
+          <div class="pkg-item"><span>高競爭植牙關鍵字長期佈局<span class="pkg-note">台中植牙（KD 37）、台中植牙推薦（KD 33）長期排名策略</span></span></div>
+          <div class="pkg-item"><span>數位 PR 計畫<span class="pkg-note">醫療健康媒體觸及，提升品牌可信度</span></span></div>
+          <div class="pkg-item"><span>AI引用推薦加強</span></div>
+          <div class="pkg-item"><span>半年期中 Ahrefs 複檢 + 策略調整</span></div>
+          <div class="pkg-item"><span>期末 KPI 驗收報告</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:40px">
+      <div class="ch-num" style="color:#D41B2C;margin-bottom:12px">執行路線圖（方案 C）</div>
+      <div class="roadmap reveal">
+        <div class="rm-step"><div class="rm-phase" style="background:#D41B2C">M1–M2<br>在地基礎</div><div class="rm-body"><h4>在地 SEO + 低難度服務詞</h4><p>Google 商家檔案優化 · 美村路/西區牙醫排名提升 · 台中兒童牙醫（KD 0）、台中洗牙（KD 0）起步 · 外鏈品質審查</p></div></div>
+        <div class="rm-step"><div class="rm-phase" style="background:var(--warn)">M3–M5<br>服務頁面</div><div class="rm-body"><h4>診療項目頁 SEO + 內容建立</h4><p>植牙 / 矯正 / 兒童牙醫服務頁優化 · 每月 2 篇 SEO 文章 · 患者 FAQ 內容 · 台中牙齒矯正（100/月）排名策略</p></div></div>
+        <div class="rm-step"><div class="rm-phase" style="background:var(--blue)">M6–M8<br>植牙關鍵字</div><div class="rm-body"><h4>高競爭植牙詞佈局 + 媒體 PR</h4><p>台中植牙推薦（KD 33, 400/月）深度布局 · 數位 PR 計畫執行 · AI 引用推薦加強 · 期中 Ahrefs 複檢</p></div></div>
+        <div class="rm-step"><div class="rm-phase" style="background:var(--green)">M9–M12<br>鞏固驗收</div><div class="rm-body"><h4>規模化 + KPI 驗收</h4><p>持續每月 2 篇文章 · 第二波 PR · 期末 Ahrefs 完整指標比對（流量 / 關鍵字 / 新患詢問量）</p></div></div>
+      </div>
+    </div>
+
+    <div style="margin-top:40px" class="reveal">
+      <div class="ch-num" style="color:#D41B2C;margin-bottom:12px">12 個月 KPI 目標</div>
+      <div style="border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,.1)">
+        <table>
+          <thead><tr><th>Ahrefs 指標</th><th>M1 基線</th><th>M6 中期目標</th><th>M12 期末目標</th></tr></thead>
+          <tbody>
+            <tr><td>月自然流量</td><td class="warn">653</td><td>1,000+</td><td class="green">2,000+</td></tr>
+            <tr><td>自然關鍵字總數</td><td class="red">11</td><td>50+</td><td class="green">150+</td></tr>
+            <tr><td>服務型關鍵字排名</td><td class="red">0</td><td>10+</td><td class="green">30+</td></tr>
+            <tr><td>美村路 / 西區牙醫 排名</td><td class="warn">#2–4</td><td>#1–2</td><td class="green">#1</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div style="max-width:680px;margin:0 auto">
+    <div style="margin-bottom:18px">
+      <a href="https://www.pufe.com.tw/index.html" target="_blank" style="display:inline-block;background:#fff;border-radius:5px;padding:5px 14px;line-height:0">
+        <img src="data:image/png;base64,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p06drrv++j59+qxbt+7UU06586c/7dy5s3UuSil1EJCIoEYjsXj8zjvvnDhxYps2bb53/XVWbQ03bD5hBathNm7tcM7573//+/nz50spGxoa7r777nBfaGrTaGtWjdLGGH6Ic3L69On19fVPP/00AJSNHAkANHbBfqOd/fTuu+++O3/B5s2bqfYmk8mQnnv++ef36NEDADjj4eGJEJoyf+aZZy5dujQej6fT6UceeWTLli3l5eUfffRRLBb729/+1qVLl159epN2GG7r4Pt+zbq15Nru1KnTxIkT4/H4ooULX3rppUGDBl188cUdSjrW1tYexffID/bgkOgxxghHptPpXr16xeNxGyrO1tAqJaVsU1i4Zs0akul0Tmgcn+0Beeedd86aNeuMgQObm5urq6vpbhOJRBAErpSawaeffppIJDKpNGH3pptuOu2004qK21r/oi1YOsGV0Db2Eg6fnX/++QsWLEDEFStWLF++fPDgwbbROaX9W7bMhciqU9TjT3AA+Osbb3zxxRc6CDp26lQ2ciS9TmttI4+ky7uuW15evnXrVupOzqUgjSfbUJ9ADxhuTA2h/gVDhgz505/+RIU6v/zlL3/+858POvPMHXV1b7/99rRp06SUY8eOvXzsFTZMRM/rOM7kyZOXLVv2fvl7N954YzyRCHx/xowZe/bsKS8vZ4wNHz588uTJdlLmYYGllIrFYlRRTaAhJd1xnHvuuad///5hT4oNgmEuAEp4otpoKtin78pv1QoAHn30UUPzfIQID+1GwR966CGLbNq1WCz22BOPFxYWWjv6QN+yExgrDIc5rbbbt2/fyy+/nI7RCy+80NDQQJtK1Zsi1Ezcz2QgNweFikOamppmz55NLolLL70UINulnaa+5CqVhXV43nbbbcTqR40a9cgjj/Tp0+eAs55qUIHZbi2+7wM7YKsmkskxY8ZQ6/b169f/4he/WLxoUXG7dhUVFcQw4vG44MKyWzJESCCeeeaZd/zkx60KCgDgpWnT9u7dG4/HHce57rrrtNae4wYZnyEc9l84zk3FpZap2zNz2PAz43z69OkvvfzytGnTqN281vrFl1567rnnJk+Zoo0GBhs3b7Kdkglw9LzZST65cRg24plKpXbu3Gkb49j3nnir0Jrf1qDljH/70m998N77X3zxRe+evZQfyHyZ7fdiDM+ph1pr1/OI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" alt="Perfect 普飛行銷" style="height:32px;width:auto;vertical-align:middle">
+      </a>
+    </div>
+    <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:6px">普飛國際行銷有限公司 &nbsp;<span style="font-weight:400;color:rgba(255,255,255,.7)">Perfect International Marketing Corp.</span></div>
+    <div style="font-size:11.5px;color:rgba(255,255,255,.55);line-height:2;margin-bottom:12px">
+      407 台中市西屯區臺灣大道 3 段 660 號 5F-3<br>
+      Tel. 886-4-24517070　Fax. 886-4-24512280<br>
+      E-mail: <span style="color:rgba(255,255,255,.7)">service@polaris.net.tw</span>　
+      <a href="https://www.pufe.com.tw/index.html" target="_blank" style="color:#D41B2C;font-weight:600">www.pufe.com.tw</a>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.1);padding-top:12px;font-size:10.5px;color:rgba(255,255,255,.3)">
+      受檢網域：shiningway-teeth.com　·　提案日期：2026 年 06 月 22 日　·　本報告數據全部來自 Ahrefs API 直接查詢，版權歸普飛行銷公司所有，僅供晶帷牙醫診所參考。
+    </div>
+  </div>
+</footer>
+
+<script>
+// Counter animation
+function animateCount(el){
+  const t=parseInt(el.dataset.count);if(!t)return;
+  let s=0;const d=1200;
+  const step=ts=>{if(!s)s=ts;const p=Math.min((ts-s)/d,1);const e=1-Math.pow(1-p,3);el.textContent=Math.floor(e*t).toLocaleString();if(p<1)requestAnimationFrame(step);};
+  requestAnimationFrame(step);
+}
+// Scroll reveal
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+window.addEventListener('load',()=>document.querySelectorAll('#hero [data-count]').forEach(animateCount));
+
+// Traffic chart
+(function(){
+  const canvas=document.getElementById('trafficChart');
+  if(!canvas)return;
+  const ctx=canvas.getContext('2d');
+  const dpr=window.devicePixelRatio||1;
+  const W=canvas.parentElement.offsetWidth-48;
+  const H=200;
+  canvas.width=W*dpr;canvas.height=H*dpr;
+  canvas.style.width=W+'px';canvas.style.height=H+'px';
+  ctx.scale(dpr,dpr);
+  const labels=['25/01','25/02','25/03','25/04','25/05','25/06','25/07','25/08','25/09','25/10','25/11','25/12','26/01','26/02','26/03','26/04','26/05','26/06'];
+  const values=[0,0,0,2,52,344,490,617,539,512,485,502,544,538,648,530,587,594];
+  const pad={l:44,r:20,t:20,b:32};
+  const cW=W-pad.l-pad.r,cH=H-pad.t-pad.b;
+  const max=700;
+  // Grid
+  ctx.strokeStyle='#E2E8F0';ctx.lineWidth=1;
+  [0,200,400,600].forEach(v=>{
+    const y=pad.t+cH*(1-v/max);
+    ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(pad.l+cW,y);ctx.stroke();
+    ctx.fillStyle='#94A3B8';ctx.font='10px Inter,system-ui,sans-serif';ctx.textAlign='right';
+    ctx.fillText(v.toString(),pad.l-6,y+3.5);
+  });
+  // X labels
+  ctx.fillStyle='#94A3B8';ctx.textAlign='center';
+  labels.forEach((l,i)=>{if(i%3===0||i===labels.length-1){const x=pad.l+(i/(labels.length-1))*cW;ctx.fillText(l,x,H-4);}});
+  const pts=values.map((v,i)=>({x:pad.l+(i/(labels.length-1))*cW,y:pad.t+cH*(1-v/max)}));
+  // Fill
+  const grad=ctx.createLinearGradient(0,pad.t,0,pad.t+cH);
+  grad.addColorStop(0,'rgba(16,185,129,.25)');grad.addColorStop(1,'rgba(16,185,129,.04)');
+  ctx.beginPath();ctx.moveTo(pts[0].x,pts[0].y);pts.forEach(p=>ctx.lineTo(p.x,p.y));
+  ctx.lineTo(pts[pts.length-1].x,pad.t+cH);ctx.lineTo(pts[0].x,pad.t+cH);ctx.closePath();
+  ctx.fillStyle=grad;ctx.fill();
+  // Line
+  pts.forEach((p,i)=>{
+    if(i===0)return;
+    ctx.beginPath();ctx.moveTo(pts[i-1].x,pts[i-1].y);ctx.lineTo(p.x,p.y);
+    ctx.strokeStyle=values[i]>400?'#10B981':values[i]>50?'#F59E0B':'#94A3B8';
+    ctx.lineWidth=2.5;ctx.stroke();
+  });
+  // Peak dot
+  const pk=pts[7];
+  ctx.beginPath();ctx.arc(pk.x,pk.y,5,0,Math.PI*2);ctx.fillStyle='#10B981';ctx.fill();
+  ctx.fillStyle='#0F2044';ctx.font='bold 11px Inter,system-ui,sans-serif';ctx.textAlign='center';
+  ctx.fillText('617',pk.x,pk.y-10);
+  // Latest
+  const cur=pts[pts.length-1];
+  ctx.beginPath();ctx.arc(cur.x,cur.y,5,0,Math.PI*2);ctx.fillStyle='#10B981';ctx.fill();
+  ctx.fillStyle='#10B981';ctx.font='bold 11px Inter,system-ui,sans-serif';ctx.textAlign='right';
+  ctx.fillText('594（最新）',cur.x+4,cur.y-9);
+})();
+
+// Nav active
+const secs=document.querySelectorAll('section[id]');
+const navAs=document.querySelectorAll('.nav-links a:not(.nav-cta)');
+window.addEventListener('scroll',()=>{
+  let cur='';secs.forEach(s=>{if(scrollY>=s.offsetTop-80)cur=s.id;});
+  navAs.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
+},{passive:true});
+</script>
+</body>
+</html>

@@ -141,6 +141,21 @@ tr:hover td{background:#EEF3FA;transition:background .15s}
 .rm-body h4{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:3px}
 .rm-body p{font-size:11.5px;color:var(--ink2);line-height:1.6}
 
+
+/* COMPETITOR */
+.comp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:800px){.comp-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.comp-grid{grid-template-columns:1fr}}
+.comp-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px 14px;text-align:center;box-shadow:var(--shadow);position:relative}
+.comp-card.highlight{border-color:var(--blue);background:#EFF6FF}
+.comp-card.star{border-color:var(--warn);background:#FFFBEB}
+.comp-card.na{border-color:var(--border);background:#F8FAFC;opacity:.8}
+.comp-domain{font-size:10px;color:var(--ink3);margin-bottom:5px}
+.comp-brand{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.comp-traffic{font-size:24px;font-weight:900;display:block;line-height:1}
+.comp-sub{font-size:11px;color:var(--ink2);margin-top:4px;display:block;line-height:1.5}
+.star-tag{position:absolute;top:-9px;left:50%;transform:translateX(-50%);background:var(--warn);color:#fff;font-size:9px;font-weight:700;padding:1px 8px;border-radius:10px;white-space:nowrap}
+
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
 .reveal.in{opacity:1;transform:none}
@@ -166,6 +181,7 @@ tr:hover td{background:#EEF3FA;transition:background .15s}
       <li><a href="#keywords">關鍵字</a></li>
       <li><a href="#opportunity">機會分析</a></li>
       <li><a href="#backlinks">外鏈</a></li>
+      <li><a href="#competitors">競品</a></li>
       <li><a href="#proposal">合作方案</a></li>
       <li><a href="#proposal" class="nav-cta">立即洽詢</a></li>
     </ul>
@@ -373,11 +389,81 @@ tr:hover td{background:#EEF3FA;transition:background .15s}
   </div>
 </section>
 
+
+<!-- CH COMPETITOR -->
+<section id="competitors" class="section section-alt">
+  <div class="section-inner">
+    <div class="section-hd reveal">
+      <div><div class="ch-num">Chapter 07</div><div class="section-title">競品 SEO 對比</div></div>
+      <div class="section-src">Ahrefs</div>
+    </div>
+
+    <div class="callout callout-gray reveal">
+      競品數據說明：① 小海星兒童牙醫、KC牙醫（雅緹斯）、中國醫藥大學附設醫院均以 Ahrefs API 直接查詢（2026-06-13）。② 牙仙子為 Facebook 頁面（facebook.com），無獨立網域，Ahrefs 無法追蹤該粉絲專頁的獨立 SEO 數據，建議確認是否有獨立診所網站。③ cmuch.cmu.edu.tw 為中國醫藥大學附設醫院整體網站，流量包含所有科別，非單純牙科數據。
+    </div>
+
+    <div class="comp-grid reveal">
+      <!-- 小海星 -->
+      <div class="comp-card star">
+        <div class="star-tag">⭐ 關鍵競品</div>
+        <div class="comp-domain">ministarfish.com.tw</div>
+        <div class="comp-brand">小海星兒童牙醫</div>
+        <span class="comp-traffic" style="color:var(--warn)">719</span>
+        <span class="comp-sub">月自然流量<br>33 個關鍵字 · 15 個 Top 1–3<br><strong style="color:var(--alert)">「兒童牙醫」#2（2,400/月）</strong></span>
+      </div>
+      <!-- 中醫大附醫 -->
+      <div class="comp-card">
+        <div class="comp-domain">cmuch.cmu.edu.tw</div>
+        <div class="comp-brand">中國醫藥大學附設醫院</div>
+        <span class="comp-traffic" style="color:var(--alert)">5,074</span>
+        <span class="comp-sub">月自然流量（整體醫院）<br>501 個關鍵字 · 181 個 Top 1–3<br><span style="color:var(--ink3);font-size:10px">包含所有科別，非純牙科</span></span>
+      </div>
+      <!-- KC牙醫 -->
+      <div class="comp-card">
+        <div class="comp-domain">kc-dental.tw</div>
+        <div class="comp-brand">KC牙醫（雅緹斯）</div>
+        <span class="comp-traffic" style="color:var(--warn)">242</span>
+        <span class="comp-sub">月自然流量<br>13 個關鍵字<br>兒童牙醫頁 59 次/月（#4）</span>
+      </div>
+      <!-- 牙仙子 -->
+      <div class="comp-card na">
+        <div class="comp-domain">facebook.com/ToothFairyDentalClinc</div>
+        <div class="comp-brand">牙仙子兒童牙醫</div>
+        <span class="comp-traffic" style="color:var(--ink3)">—</span>
+        <span class="comp-sub">Facebook 粉絲專頁<br>無獨立網域，Ahrefs 無法分析<br><span style="color:var(--blue);font-size:10px">建議確認是否有獨立網站</span></span>
+      </div>
+    </div>
+
+    <!-- Comparison table -->
+    <div class="tbl-wrap reveal" style="margin-top:20px">
+      <table>
+        <thead><tr><th>診所</th><th>月自然流量</th><th>自然關鍵字</th><th>Top 1–3 詞</th><th>流量頁面數</th><th>關鍵排名（代表）</th></tr></thead>
+        <tbody>
+          <tr><td><strong>中醫大附醫</strong><span class="sub">cmuch.cmu.edu.tw（整體醫院）</span></td><td class="red">5,074</td><td>501</td><td>181</td><td>—</td><td class="gray">整體醫院，含所有科別</td></tr>
+          <tr style="background:#FFFBEB"><td><strong>小海星兒童牙醫</strong><span class="sub">ministarfish.com.tw</span></td><td class="warn">719</td><td>33</td><td>15</td><td>5+</td><td style="color:var(--alert);font-weight:700">「兒童牙醫」#2（2,400/月）</td></tr>
+          <tr style="background:#EFF6FF"><td style="color:var(--blue);font-weight:700">晶帷牙醫診所<span class="sub">shiningway-teeth.com</span></td><td class="blue">653</td><td class="blue">11</td><td class="blue">7</td><td class="blue">9</td><td class="red">無服務型關鍵字排名</td></tr>
+          <tr><td><strong>KC牙醫（雅緹斯）</strong><span class="sub">kc-dental.tw</span></td><td class="warn">242</td><td>13</td><td>3</td><td>5</td><td>「台中兒童牙醫」#4（150/月）</td></tr>
+          <tr><td><strong>牙仙子兒童牙醫</strong><span class="sub">Facebook 頁面</span></td><td class="gray">—</td><td class="gray">—</td><td class="gray">—</td><td class="gray">—</td><td class="gray">無獨立網域 SEO 數據</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Key insight -->
+    <div class="callout callout-red reveal">
+      <strong>最關鍵發現 — 小海星兒童牙醫的啟示：</strong><br>
+      小海星兒童牙醫 DR 僅 0.1（接近零），卻在「兒童牙醫」（月搜尋量 2,400、KD 僅 4）排名 <strong>#2</strong>，每月帶來 719 次流量。<br>
+      原因：專注的兒童牙科主題內容 + 清晰的頁面結構，讓 Google 認定它是「兒童牙醫」主題的高相關頁面。<br><br>
+      <strong>晶帷的機會：</strong>網站已有「兒童牙醫」服務頁面，但完全無關鍵字排名。若建立優化的兒童牙科專屬內容，極有機會搶進「兒童牙醫」（2,400/月, KD 4）的前三名排名。
+    </div>
+  </div>
+</section>
+
+
 <!-- CH7 PROPOSAL -->
 <section id="proposal" class="section" style="background:#1a1a2e">
   <div class="section-inner">
     <div class="section-hd reveal" style="border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:24px;margin-bottom:32px">
-      <div><div class="ch-num" style="color:#D41B2C">Chapter 07</div><div class="section-title" style="color:#fff">12 個月合作方案</div></div>
+      <div><div class="ch-num" style="color:#D41B2C">Chapter 08</div><div class="section-title" style="color:#fff">12 個月合作方案</div></div>
       <div class="section-src" style="color:rgba(255,255,255,.4)">定價另行洽詢<br>數據驗收以 Ahrefs 指標為基準</div>
     </div>
     <div class="pkg-grid reveal">

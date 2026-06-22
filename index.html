@@ -142,6 +142,86 @@ tr:hover td{background:#EEF3FA;transition:background .15s}
 .rm-body p{font-size:11.5px;color:var(--ink2);line-height:1.6}
 
 
+
+/* FULL-WIDTH PACKAGE CARDS */
+.pkg-full { display:flex; flex-direction:column; gap:24px; }
+.pkg-full-card {
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.pkg-full-card.rec { border-color:var(--blue); }
+.pkg-full-header {
+  display:grid;
+  grid-template-columns:64px 1fr auto;
+  align-items:center;
+  gap:16px;
+  padding:20px 24px;
+  border-bottom:1px solid var(--border);
+  background:#FAFAFA;
+}
+.pkg-full-card.rec .pkg-full-header { background:#EFF6FF; }
+.pkg-letter {
+  width:52px; height:52px;
+  border-radius:10px;
+  background:#D41B2C;
+  color:#fff;
+  font-size:22px;
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+.pkg-full-card.rec .pkg-letter { background:var(--blue); }
+.pkg-title-area h3 { font-size:17px; font-weight:800; color:var(--navy); margin-bottom:3px; }
+.pkg-title-area p  { font-size:12px; color:var(--ink2); line-height:1.5; }
+.pkg-price-block   { text-align:right; white-space:nowrap; }
+.pkg-price-block .price { font-size:22px; font-weight:900; color:#D41B2C; }
+.pkg-full-card.rec .pkg-price-block .price { color:var(--blue); }
+.pkg-price-block .unit  { font-size:11px; color:var(--ink3); display:block; margin-top:2px; }
+
+.pkg-full-body {
+  display:grid;
+  grid-template-columns:240px 1fr;
+  gap:0;
+}
+@media(max-width:700px){ .pkg-full-body { grid-template-columns:1fr; } }
+
+.pkg-specs-col {
+  padding:20px;
+  border-right:1px solid var(--border);
+  background:#FAFAFA;
+}
+@media(max-width:700px){ .pkg-specs-col { border-right:none; border-bottom:1px solid var(--border); } }
+.pkg-specs-col h4 { font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--ink3); margin-bottom:10px; }
+.spec-row { display:flex; flex-direction:column; gap:2px; margin-bottom:10px; padding-bottom:10px; border-bottom:1px solid var(--border); }
+.spec-row:last-child { border-bottom:none; margin-bottom:0; padding-bottom:0; }
+.spec-label { font-size:10px; color:var(--ink3); font-weight:600; }
+.spec-value { font-size:12px; color:var(--ink); font-weight:500; line-height:1.4; }
+
+.pkg-content-col { padding:20px 24px; }
+.pkg-value-title { font-size:12px; font-weight:700; color:var(--navy); margin-bottom:8px; display:flex; align-items:center; gap:6px; }
+.pkg-value-title::before { content:''; width:3px; height:14px; background:#D41B2C; border-radius:2px; display:inline-block; flex-shrink:0; }
+.pkg-full-card.rec .pkg-value-title::before { background:var(--blue); }
+.pkg-value-text { font-size:12.5px; color:var(--ink2); line-height:1.8; margin-bottom:16px; }
+.pkg-value-text strong { color:var(--navy); }
+
+.pkg-why-box {
+  background:#FFFBEB;
+  border:1px solid #FDE68A;
+  border-left:3px solid #F59E0B;
+  border-radius:6px;
+  padding:14px 16px;
+}
+.pkg-full-card.rec .pkg-why-box { background:#EFF6FF; border-color:#BFDBFE; border-left-color:var(--blue); }
+.pkg-why-title { font-size:11px; font-weight:700; color:#D97706; margin-bottom:6px; }
+.pkg-full-card.rec .pkg-why-title { color:var(--blue); }
+.pkg-why-text { font-size:12px; color:var(--ink2); line-height:1.7; }
+.pkg-why-text strong { color:var(--navy); }
+
 /* COMPETITOR */
 .comp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 @media(max-width:800px){.comp-grid{grid-template-columns:repeat(2,1fr)}}
@@ -459,94 +539,104 @@ tr:hover td{background:#EEF3FA;transition:background .15s}
 </section>
 
 
-<!-- CH7 PROPOSAL -->
 <section id="proposal" class="section" style="background:#1a1a2e">
   <div class="section-inner">
     <div class="section-hd reveal" style="border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:24px;margin-bottom:32px">
-      <div><div class="ch-num" style="color:#D41B2C">Chapter 08</div><div class="section-title" style="color:#fff">合作方案</div></div>
+      <div>
+        <div class="ch-num" style="color:#D41B2C">Chapter 08</div>
+        <div class="section-title" style="color:#fff">合作方案</div>
+      </div>
       <div class="section-src" style="color:rgba(255,255,255,.4)">報價含稅<br>如需客製化請洽詢</div>
     </div>
+
+    <!-- Package cards -->
     <div class="pkg-grid reveal">
-      <!-- A -->
+
+      <!-- 方案 A -->
       <div class="pkg-card">
         <div class="pkg-tag">方案 A</div>
-        <div class="pkg-name">SEO/GEO 官網診斷報告</div>
-        <div class="pkg-desc">一次性深度診斷 · 了解現況 · 獲取行動方向</div>
-        <div style="text-align:center;margin:12px 0 16px">
-          <span style="font-size:28px;font-weight:900;color:#D41B2C">NT$15,000</span>
-          <span style="font-size:12px;color:var(--ink3);margin-left:4px">/ 次</span>
+        <div class="pkg-name">數位資產體質改進藍圖</div>
+        <div class="pkg-desc" style="line-height:1.6">一份拿到就能動的行動指南<br>不是冰冷的數字報告</div>
+        <div style="text-align:center;margin:14px 0;padding:12px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+          <span style="font-size:26px;font-weight:900;color:#D41B2C">NT$15,000</span>
+          <span style="font-size:12px;color:var(--ink3);margin-left:4px">/ 次（一次性）</span>
+        </div>
+        <div style="font-size:11px;color:var(--ink2);margin-bottom:12px;line-height:1.9">
+          <div style="display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px solid var(--bg2)"><span>分析工具</span><span style="font-weight:600">Ahrefs + GEO 初步評估</span></div>
+          <div style="display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px solid var(--bg2)"><span>競品比對</span><span style="font-weight:600">需提供競爭者網站（1–3 個）</span></div>
+          <div style="display:flex;justify-content:space-between;padding:2px 0"><span>交付形式</span><span style="font-weight:600">PDF + 網頁版報告</span></div>
         </div>
         <div class="pkg-items">
-          <div class="pkg-item"><span>完整 Ahrefs 數據健檢<span class="pkg-note">流量、關鍵字、趨勢、外鏈全面分析</span></span></div>
-          <div class="pkg-item"><span>競品 SEO/GEO 比對<span class="pkg-note">需客戶提供競爭者網站</span></span></div>
-          <div class="pkg-item"><span>品牌詞 vs 服務詞流量結構分析</span></div>
-          <div class="pkg-item"><span>機會關鍵字清單<span class="pkg-note">含 Ahrefs 搜尋量確認</span></span></div>
-          <div class="pkg-item"><span>外鏈品質評估<span class="pkg-note">疑似問題外鏈識別</span></span></div>
-          <div class="pkg-item"><span>可執行優化優先序建議</span></div>
+          <div class="pkg-item"><span>Ahrefs 歷史數據縱深分析<span class="pkg-note">流量趨勢、關鍵字排名缺口、外鏈健康度</span></span></div>
+          <div class="pkg-item"><span>競品 SEO/GEO 完整比對<span class="pkg-note">含 AI 引擎初步能見度評估</span></span></div>
+          <div class="pkg-item"><span>品牌詞 vs 服務詞流量結構診斷</span></div>
+          <div class="pkg-item"><span>機會關鍵字清單（Ahrefs 搜尋量確認）</span></div>
+          <div class="pkg-item"><span>優先序行動建議<span class="pkg-note">先做哪個、為什麼、預期改變</span></span></div>
+        </div>
+        <div style="margin-top:14px;padding:10px 12px;background:#F0F4F8;border-radius:6px;font-size:11px;color:var(--ink2);line-height:1.6">
+          <strong style="color:var(--navy)">💡 為什麼比自己買工具更划算？</strong><br>
+          Ahrefs 月費約 NT$4,000，還需要 2–3 個月學習曲線。NT$15,000 你買到的是已消化完畢的行動地圖，連工具費、學習成本都省了。
         </div>
       </div>
-      <!-- B -->
+
+      <!-- 方案 B -->
       <div class="pkg-card">
         <div class="pkg-tag">方案 B</div>
-        <div class="pkg-name">季度成效追蹤報告</div>
-        <div class="pkg-desc">定期檢視成效 · 確認優化方向 · 全年 4 次</div>
-        <div style="text-align:center;margin:12px 0 16px">
-          <span style="font-size:28px;font-weight:900;color:#D41B2C">NT$80,000</span>
-          <span style="font-size:12px;color:var(--ink3);margin-left:4px">/ 年</span>
+        <div class="pkg-name">季度數位成效校準報告</div>
+        <div class="pkg-desc" style="line-height:1.6">每三個月，有人替你把脈<br>幫你調整航向</div>
+        <div style="text-align:center;margin:14px 0;padding:12px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+          <span style="font-size:26px;font-weight:900;color:#D41B2C">NT$80,000</span>
+          <span style="font-size:12px;color:var(--ink3);margin-left:4px">/ 年（每季 × 4 次）</span>
+        </div>
+        <div style="font-size:11px;color:var(--ink2);margin-bottom:12px;line-height:1.9">
+          <div style="display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px solid var(--bg2)"><span>分析工具</span><span style="font-weight:600">Ahrefs / GA / Search Console</span></div>
+          <div style="display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px solid var(--bg2)"><span>加碼服務</span><span style="font-weight:600">每季策略對齊會議 × 1</span></div>
+          <div style="display:flex;justify-content:space-between;padding:2px 0"><span>競品監測</span><span style="font-weight:600">Ahrefs 流量動態追蹤</span></div>
         </div>
         <div class="pkg-items">
-          <div class="pkg-item"><span>每季一份 Ahrefs / GA / Search Console 追蹤報告<span class="pkg-note">全年 4 次</span></span></div>
-          <div class="pkg-item"><span>核心指標與上季比較<span class="pkg-note">流量、關鍵字數、Top 1-3 排名詞</span></span></div>
-          <div class="pkg-item"><span>關鍵字排名變化分析<span class="pkg-note">進步 / 退步追蹤</span></span></div>
-          <div class="pkg-item"><span>競品動態監測</span></div>
-          <div class="pkg-item"><span>下一季優化建議調整</span></div>
+          <div class="pkg-item"><span>每季一份完整追蹤報告<span class="pkg-note">Ahrefs / GA / Search Console 三維交叉比對</span></span></div>
+          <div class="pkg-item"><span>核心指標與上季比較<span class="pkg-note">流量、關鍵字數、Top 1–3 排名詞</span></span></div>
+          <div class="pkg-item"><span>競品流量動態監測<span class="pkg-note">確認競爭者有沒有悄悄搶走你的流量</span></span></div>
+          <div class="pkg-item"><span>每季策略對齊會議<span class="pkg-note">一起決定接下來三個月怎麼走</span></span></div>
+          <div class="pkg-item"><span>下一季優化方向建議</span></div>
+        </div>
+        <div style="margin-top:14px;padding:10px 12px;background:#F0F4F8;border-radius:6px;font-size:11px;color:var(--ink2);line-height:1.6">
+          <strong style="color:var(--navy)">💡 為什麼比自己買工具更划算？</strong><br>
+          具備三工具整合能力的行銷人才月薪 NT$50,000 起。方案 B 月均 NT$6,667，只付顧問費，不付薪資、不買工具、不承擔招募失敗風險。
         </div>
       </div>
-      <!-- C -->
+
+      <!-- 方案 C -->
       <div class="pkg-card rec">
         <div class="pkg-rec-badge">推薦方案</div>
         <div class="pkg-tag rec">方案 C</div>
-        <div class="pkg-name">年度顧問輔導服務</div>
-        <div class="pkg-desc">持續陪跑 · 主動建議 · 含方案 B 全部</div>
-        <div style="text-align:center;margin:12px 0 16px">
-          <span style="font-size:28px;font-weight:900;color:#2563EB">NT$180,000</span>
-          <span style="font-size:12px;color:var(--ink3);margin-left:4px">/ 年</span>
+        <div class="pkg-name">年度專屬數位策略長</div>
+        <div class="pkg-desc" style="line-height:1.6">像有一位懂 SEO/GEO 的共同創辦人<br>每個月都在你身邊</div>
+        <div style="text-align:center;margin:14px 0;padding:12px 0;border-top:1px solid #BFDBFE;border-bottom:1px solid #BFDBFE">
+          <span style="font-size:26px;font-weight:900;color:#2563EB">NT$180,000</span>
+          <span style="font-size:12px;color:var(--ink3);margin-left:4px">/ 年（月報 + 季報）</span>
+        </div>
+        <div style="font-size:11px;color:var(--ink2);margin-bottom:12px;line-height:1.9">
+          <div style="display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px solid var(--bg2)"><span>分析工具</span><span style="font-weight:600">Ahrefs / GA / Search Console</span></div>
+          <div style="display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px solid var(--bg2)"><span>GEO 監測</span><span style="font-weight:600">AI 引擎品牌提及率</span></div>
+          <div style="display:flex;justify-content:space-between;padding:2px 0"><span>諮詢管道</span><span style="font-weight:600;color:#2563EB">不限次數</span></div>
         </div>
         <div class="pkg-items">
-          <div class="pkg-item"><span>方案 B 全部服務<span class="pkg-note">年度 4 次季度追蹤報告</span></span></div>
-          <div class="pkg-item"><span>每月 Ahrefs / GA / Search Console 關鍵指標監測</span></div>
-          <div class="pkg-item"><span>每月顧問輔導會議</span></div>
-          <div class="pkg-item"><span>主動優化建議<span class="pkg-note">發現問題主動提出，不等季報</span></span></div>
-          <div class="pkg-item"><span>關鍵字 / 主題布局策略規劃</span></div>
-          <div class="pkg-item"><span>直接諮詢管道<span class="pkg-note">Email / 訊息</span></span></div>
+          <div class="pkg-item"><span>方案 B 全部服務<span class="pkg-note">年度 4 次季度報告 + 策略會議</span></span></div>
+          <div class="pkg-item"><span>每月 Ahrefs / GA / Search Console 監測</span></div>
+          <div class="pkg-item"><span>每月顧問輔導會議<span class="pkg-note">用上月數據決定這個月哪裡要加力、哪裡要停損</span></span></div>
+          <div class="pkg-item"><span>雙週進度微調<span class="pkg-note">發現問題主動提出，不等季報</span></span></div>
+          <div class="pkg-item"><span>GEO 品牌提及率監測<span class="pkg-note">Perplexity / ChatGPT Search 等 AI 引擎</span></span></div>
+          <div class="pkg-item"><span>關鍵字 / 主題內容布局策略規劃</span></div>
+          <div class="pkg-item"><span>不限次數即時諮詢（Email / 訊息）</span></div>
+        </div>
+        <div style="margin-top:14px;padding:10px 12px;background:#EFF6FF;border-radius:6px;font-size:11px;color:var(--ink2);line-height:1.6">
+          <strong style="color:#1D4ED8">💡 為什麼比自己買工具更划算？</strong><br>
+          資深 SEO/GEO 顧問市場行情 NT$80,000–150,000 / 月。方案 C 月均 NT$15,000，取得完整服務深度——是聘用同等人才成本的一成，卻是完整的策略陪跑。
         </div>
       </div>
     </div>
 
-    <div style="margin-top:40px">
-      <div class="ch-num" style="color:#D41B2C;margin-bottom:12px">執行路線圖（方案 C）</div>
-      <div class="roadmap reveal">
-        <div class="rm-step"><div class="rm-phase" style="background:#D41B2C">M1–M2<br>在地基礎</div><div class="rm-body"><h4>在地 SEO + 低難度服務詞</h4><p>Google 商家檔案優化 · 美村路/西區牙醫排名提升 · 台中兒童牙醫（KD 0）、台中洗牙（KD 0）起步 · 外鏈品質審查</p></div></div>
-        <div class="rm-step"><div class="rm-phase" style="background:var(--warn)">M3–M5<br>服務頁面</div><div class="rm-body"><h4>診療項目頁 SEO + 內容建立</h4><p>植牙 / 矯正 / 兒童牙醫服務頁優化 · 每月 2 篇 SEO 文章 · 患者 FAQ 內容 · 台中牙齒矯正（100/月）排名策略</p></div></div>
-        <div class="rm-step"><div class="rm-phase" style="background:var(--blue)">M6–M8<br>植牙關鍵字</div><div class="rm-body"><h4>高競爭植牙詞佈局 + 媒體 PR</h4><p>台中植牙推薦（KD 33, 400/月）深度布局 · 數位 PR 計畫執行 · AI 引用推薦加強 · 期中 Ahrefs 複檢</p></div></div>
-        <div class="rm-step"><div class="rm-phase" style="background:var(--green)">M9–M12<br>鞏固驗收</div><div class="rm-body"><h4>規模化 + KPI 驗收</h4><p>持續每月 2 篇文章 · 第二波 PR · 期末 Ahrefs 完整指標比對（流量 / 關鍵字 / 新患詢問量）</p></div></div>
-      </div>
-    </div>
-
-    <div style="margin-top:40px" class="reveal">
-      <div class="ch-num" style="color:#D41B2C;margin-bottom:12px">12 個月 KPI 目標</div>
-      <div style="border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,.1)">
-        <table>
-          <thead><tr><th>Ahrefs 指標</th><th>M1 基線</th><th>M6 中期目標</th><th>M12 期末目標</th></tr></thead>
-          <tbody>
-            <tr><td>月自然流量</td><td class="warn">653</td><td>1,000+</td><td class="green">2,000+</td></tr>
-            <tr><td>自然關鍵字總數</td><td class="red">11</td><td>50+</td><td class="green">150+</td></tr>
-            <tr><td>服務型關鍵字排名</td><td class="red">0</td><td>10+</td><td class="green">30+</td></tr>
-            <tr><td>美村路 / 西區牙醫 排名</td><td class="warn">#2–4</td><td>#1–2</td><td class="green">#1</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
   </div>
 </section>
 
